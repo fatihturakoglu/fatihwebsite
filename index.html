@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!-- Site language: English. Turkish can be added later using the data-i18n keys (see CLAUDE.md). -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammed Fatih Turakoğlu — Game & Backend Developer</title>
+  <meta name="description" content="Computer engineer in Istanbul building Unity games and .NET backends.">
+
+  <!-- Font: Inter (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Styles (order matters): theme -> base -> navbar -> home -> footer -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR — START   (styles: css/navbar.css)
+       ===================================================== -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <!-- Name on the left, links back to the top -->
+      <a href="#home" class="navbar__logo">Fatih Turakoğlu</a>
+
+      <!-- Hamburger button, only visible on mobile -->
+      <button class="navbar__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Menu links: each href points to a section id below -->
+      <nav class="navbar__menu" id="nav-menu">
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <!-- Placeholder for the future language switch (EN / TR) -->
+        <!-- <button class="navbar__lang">TR</button> -->
+      </nav>
+    </div>
+  </header>
+  <!-- ===================== NAVBAR — END ===================== -->
+
+
+  <main>
+
+    <!-- =====================================================
+         HOME (HERO) — START   (styles: css/home.css → HERO)
+         The big name is the one bold element on the page.
+         ===================================================== -->
+    <section id="home" class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__name">Muhammed Fatih<br>Turakoğlu</h1>
+          <p class="hero__intro" data-i18n="hero.intro">
+            Computer engineer in Istanbul. I build Unity games and the .NET backends behind real products.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary" data-i18n="hero.cta_projects">See my projects</a>
+            <!-- CV file lives in Media/CV/ -->
+            <a href="Media/CV/Muhammed%20Fatih%20Turako%C4%9Flu.pdf" class="btn btn--outline" download data-i18n="hero.cta_cv">Download CV</a>
+          </div>
+        </div>
+
+        <!-- Profile photo with a mint block behind it -->
+        <figure class="hero__photo">
+          <img src="Media/Images/FatihResim.jpg" alt="Portrait of Muhammed Fatih Turakoğlu" width="704" height="891">
+        </figure>
+      </div>
+    </section>
+    <!-- ================= HOME (HERO) — END ================= -->
+
+    <!-- =====================================================
+         EXPERIENCE — START   (styles: css/home.css → EXPERIENCE)
+         Work timeline (newest first) + certificates as images.
+         ===================================================== -->
+    <section id="experience" class="section experience">
+      <div class="container">
+        <h2 class="section__title" data-i18n="experience.title">Experience</h2>
+
+        <!-- Timeline: horizontal on desktop, vertical on phones -->
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__date">2024–2026</span>
+            <p class="timeline__role" data-i18n="experience.exp1.role">Software & Systems Developer</p>
+            <p class="timeline__company">MFT Games, Istanbul</p>
+            <p class="timeline__desc" data-i18n="experience.exp1.desc">Built four Unity apps, including Trail Ball 3D on Google Play and a TÜBİTAK chemistry lab simulation.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">2025</span>
+            <p class="timeline__role" data-i18n="experience.exp2.role">Backend Developer Intern</p>
+            <p class="timeline__company">VakıfBank, Istanbul</p>
+            <p class="timeline__desc" data-i18n="experience.exp2.desc">SQL Server queries, DTO mapping and Web APIs documented with Swagger, in an Onion Architecture codebase.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">2025</span>
+            <p class="timeline__role" data-i18n="experience.exp3.role">Backend Developer</p>
+            <p class="timeline__company">Plus Mühendislik, Istanbul</p>
+            <p class="timeline__desc" data-i18n="experience.exp3.desc">Batch reporting software for industrial automation.</p>
+          </li>
+        </ol>
+
+        <!-- Education -->
+        <h3 class="experience__subtitle" data-i18n="experience.education">Education</h3>
+        <div class="education">
+          <span class="timeline__date">2022–2026</span>
+          <p class="timeline__role" data-i18n="experience.edu.degree">B.Sc. in Computer Engineering</p>
+          <p class="timeline__company" data-i18n="experience.edu.school">Biruni University, Istanbul</p>
+        </div>
+
+        <!-- Certificates: small images, click to open the original file -->
+        <h3 class="experience__subtitle" data-i18n="experience.certs">Certificates</h3>
+        <ul class="certs">
+          <li class="cert">
+            <a href="Media/certificate/Unity_Oyun_Geli%C5%9Ftirme_Motoru_Sertifika.pdf" target="_blank" rel="noopener">
+              <img src="Media/web/cert-unity.webp" alt="Unity Game Engine certificate, BTK Akademi" width="640" height="453" loading="lazy">
+            </a>
+            <p class="cert__title" data-i18n="experience.cert1.title">Unity Game Engine</p>
+            <p class="cert__meta" data-i18n="experience.cert1.meta">BTK Akademi, November 2025</p>
+          </li>
+          <li class="cert">
+            <a href="Media/certificate/sertifikaWEBAP%C4%B0.jpg" target="_blank" rel="noopener">
+              <img src="Media/web/cert-webapi.webp" alt="Layered Architecture and Entity Framework with Web API certificate, Udemy" width="640" height="476" loading="lazy">
+            </a>
+            <p class="cert__title" data-i18n="experience.cert2.title">Layered Architecture and Entity Framework with Web API</p>
+            <p class="cert__meta" data-i18n="experience.cert2.meta">Udemy, July 2025</p>
+          </li>
+          <li class="cert">
+            <a href="Media/certificate/JAVA_ile_Programlamaya_Giri%C5%9F_Sertifika.pdf" target="_blank" rel="noopener">
+              <img src="Media/web/cert-java.webp" alt="Introduction to Java Programming certificate, BTK Akademi" width="640" height="453" loading="lazy">
+            </a>
+            <p class="cert__title" data-i18n="experience.cert3.title">Introduction to Java Programming</p>
+            <p class="cert__meta" data-i18n="experience.cert3.meta">BTK Akademi, April 2025</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- ================== EXPERIENCE — END ================== -->
+
+
+    <!-- =====================================================
+         SKILLS — START   (styles: css/home.css → SKILLS)
+         Two main areas side by side, then the rest in one row.
+         ===================================================== -->
+    <section id="skills" class="skills-band">
+      <div class="container">
+        <h2 class="section__title" data-i18n="skills.title">What I work with</h2>
+        <div class="skills-band__grid">
+          <!-- Main area 1 -->
+          <div class="skills-band__area">
+            <h3 class="skills-band__heading" data-i18n="skills.games.title">Games and simulations</h3>
+            <p class="skills-band__lead" data-i18n="skills.games.lead">Unity and C#, from gameplay to store release.</p>
+            <ul class="skills-band__list">
+              <li>Unity</li><li>C#</li><li>VContainer (DI)</li><li>UniTask</li><li>Addressables</li>
+              <li data-i18n="skills.games.pooling">Object pooling</li>
+              <li data-i18n="skills.games.memory">Memory and CPU/GPU optimization</li>
+              <li>Google Play Console</li><li>AdMob</li>
+            </ul>
+          </div>
+          <!-- Main area 2 -->
+          <div class="skills-band__area">
+            <h3 class="skills-band__heading" data-i18n="skills.backend.title">Backend</h3>
+            <p class="skills-band__lead" data-i18n="skills.backend.lead">.NET services and the databases behind them.</p>
+            <ul class="skills-band__list">
+              <li>.NET Core</li><li>Web API</li><li>REST</li><li>JWT</li><li>Swagger</li>
+              <li>SQL Server</li><li>PostgreSQL</li><li>MySQL</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Everything else in one quiet row -->
+        <dl class="skills-band__more">
+          <div>
+            <dt data-i18n="skills.languages">Languages</dt>
+            <dd>C#, C++, C, Java, JavaScript, HTML, CSS</dd>
+          </div>
+          <div>
+            <dt data-i18n="skills.practices">Practices</dt>
+            <dd>SOLID, OOP, Onion Architecture, event-driven design, Git Flow</dd>
+          </div>
+          <div>
+            <dt data-i18n="skills.spoken">Spoken</dt>
+            <dd data-i18n="skills.spoken.value">Turkish (native), English (C1)</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <!-- ==================== SKILLS — END ==================== -->
+
+
+    <!-- =====================================================
+         PROJECTS — START   (styles: css/home.css → PROJECTS)
+         Each project is one <article class="project">.
+         Galleries: .gallery--landscape (PC screenshots) or .gallery--phones (mobile).
+         Small images live in Media/web/ (WebP); each links to the full-size original.
+         ===================================================== -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section__title" data-i18n="projects.title">Projects</h2>
+
+        <!-- Project: Chemistry Lab (PC, landscape screenshots) -->
+        <article class="project">
+          <p class="project__meta" data-i18n="projects.chem.meta">PC simulation, made for a TÜBİTAK project</p>
+          <div class="project__body">
+            <h3 class="project__title" data-i18n="projects.chem.title">Chemistry Laboratory Simulation</h3>
+            <p class="project__desc" data-i18n="projects.chem.desc">
+              A 3D chemistry lab with five experiments, built for a TÜBİTAK-supported project. Students open the
+              cabinet, pick up the equipment and chemicals they think they need, and run each experiment by trial
+              and error while a professor character guides them. Experiments include a density tower, a silver
+              mirror and black powder, all without any real-world risk.
+            </p>
+            <ul class="project__tech">
+              <li>Unity</li><li>C#</li><li>VContainer</li><li data-i18n="projects.chem.tech4">Event-driven design</li>
+            </ul>
+          </div>
+          <!-- Gallery: one large image + four small ones -->
+          <div class="project__gallery gallery gallery--landscape">
+            <a href="Media/GameImgs/ChemestirySimilutaionImgs/KimyaSimilasyonu1.png" target="_blank" rel="noopener">
+              <img src="Media/web/chem-welcome.webp" alt="The professor welcoming the student to the 3D lab" width="920" height="512" loading="lazy">
+            </a>
+            <a href="Media/GameImgs/ChemestirySimilutaionImgs/KimyaSim%C3%BClasyonu2.png" target="_blank" rel="noopener">
+              <img src="Media/web/chem-density.webp" alt="Building a density tower with layered liquids" width="918" height="515" loading="lazy">
+            </a>
+            <a href="Media/GameImgs/ChemestirySimilutaionImgs/KimyaSim%C3%BClasyonu4.png" target="_blank" rel="noopener">
+              <img src="Media/web/chem-silver.webp" alt="Silver mirror experiment with silver nitrate" width="918" height="515" loading="lazy">
+            </a>
+            <a href="Media/GameImgs/ChemestirySimilutaionImgs/KimyaSim%C3%BClasyonu5.png" target="_blank" rel="noopener">
+              <img src="Media/web/chem-heat.webp" alt="Heating a flask on the hot plate" width="919" height="515" loading="lazy">
+            </a>
+            <a href="Media/GameImgs/ChemestirySimilutaionImgs/KimyaSim%C3%BClasyonu7.png" target="_blank" rel="noopener">
+              <img src="Media/web/chem-fire.webp" alt="Black powder experiment burning on the bench" width="920" height="522" loading="lazy">
+            </a>
+          </div>
+        </article>
+
+        <!-- Project: Trail Ball 3D (mobile, phone screenshots) -->
+        <article class="project">
+          <p class="project__meta" data-i18n="projects.trail.meta">Mobile game on Google Play</p>
+          <div class="project__body">
+            <h3 class="project__title">Trail Ball 3D</h3>
+            <p class="project__desc" data-i18n="projects.trail.desc">
+              Roll a ball along a winding track that keeps getting faster. Each run throws new track pieces,
+              gaps and obstacles at you, coins pay for new ball skins in the store, and a slow-down button
+              buys you a moment when it gets tight.
+            </p>
+            <ul class="project__tech">
+              <li>Unity</li><li>C#</li><li data-i18n="projects.trail.tech3">Object pooling</li><li>AdMob</li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.MuhammedFatihTurakolu.TrailBall3D&amp;hl=en" class="project__link" target="_blank" rel="noopener" data-i18n="projects.trail.link">Get it on Google Play</a>
+          </div>
+          <!-- Gallery: phone screenshots, every other one sits a bit lower -->
+          <div class="project__gallery gallery gallery--phones">
+            <a href="Media/GameImgs/TrailBallImgs/TrailBallMainMenu.png" target="_blank" rel="noopener">
+              <img src="Media/web/trailball-menu.webp" alt="Trail Ball 3D start screen" width="351" height="762" loading="lazy">
+            </a>
+            <a href="Media/GameImgs/TrailBallImgs/Trailball1.png" target="_blank" rel="noopener">
+              <img src="Media/web/trailball-track.webp" alt="Ball rolling on a zigzag track with coins" width="351" height="762" loading="lazy">
+            </a>
+            <a href="Media/GameImgs/TrailBallImgs/TrailBall2.png" target="_blank" rel="noopener">
+              <img src="Media/web/trailball-track2.webp" alt="Track with gaps and turns" width="351" height="762" loading="lazy">
+            </a>
+            <a href="Media/GameImgs/TrailBallImgs/TrailBallSkinStore.png" target="_blank" rel="noopener">
+              <img src="Media/web/trailball-store.webp" alt="Skin store with Moon, Neptune, Uranus and Venus balls" width="381" height="763" loading="lazy">
+            </a>
+          </div>
+        </article>
+
+        <!-- Project: Big Punch Man (mobile, banner + phone screenshots) -->
+        <article class="project">
+          <p class="project__meta" data-i18n="projects.punch.meta">Hyper-casual mobile game</p>
+          <div class="project__body">
+            <h3 class="project__title">Big Punch Man</h3>
+            <p class="project__desc" data-i18n="projects.punch.desc">
+              A runner-brawler where your arm is the weapon. Run through gates that boost punch power and
+              punch length, break through doors, smash punching bags for coins, knock down crowds of enemies
+              and take on the boss at the end. I wrote the code together with Claude Code as an AI pair
+              programmer, which let me spend more time on game feel and balancing.
+            </p>
+            <ul class="project__tech">
+              <li>Unity</li><li>C#</li><li>Claude Code</li>
+            </ul>
+          </div>
+          <!-- Gallery: store banner on top, phone screenshots below -->
+          <div class="project__gallery">
+            <img class="gallery__banner" src="Media/web/bigpunch-cover.webp" alt="Big Punch Man store banner" width="1024" height="500" loading="lazy">
+            <div class="gallery gallery--phones">
+              <a href="Media/GameImgs/BigPunchManImages/storeResim1.png" target="_blank" rel="noopener">
+                <img src="Media/web/bigpunch-obstacles.webp" alt="Punching through obstacles" width="540" height="960" loading="lazy">
+              </a>
+              <a href="Media/GameImgs/BigPunchManImages/StoreResim4Tablet.png" target="_blank" rel="noopener">
+                <img src="Media/web/bigpunch-door.webp" alt="Gates that add punch power" width="540" height="960" loading="lazy">
+              </a>
+              <a href="Media/GameImgs/BigPunchManImages/StoreResim5Tablet.png" target="_blank" rel="noopener">
+                <img src="Media/web/bigpunch-bags.webp" alt="Smashing punching bags for coins" width="540" height="960" loading="lazy">
+              </a>
+              <a href="Media/GameImgs/BigPunchManImages/StoreResim3.png" target="_blank" rel="noopener">
+                <img src="Media/web/bigpunch-crowd.webp" alt="Crushing a crowd of enemies" width="540" height="960" loading="lazy">
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: Maze game (one phone screenshot next to the text) -->
+        <article class="project project--side">
+          <p class="project__meta" data-i18n="projects.maze.meta">Mobile game</p>
+          <div class="project__body">
+            <h3 class="project__title" data-i18n="projects.maze.title">Maze Game</h3>
+            <p class="project__desc" data-i18n="projects.maze.desc">
+              A physics-driven maze game. Guide the ball through levels that grow larger and tighter,
+              zoom out to plan a route, and leave a trail so you can see where you have already been.
+            </p>
+            <ul class="project__tech">
+              <li>Unity</li><li>C#</li><li data-i18n="projects.maze.tech3">Physics</li>
+            </ul>
+          </div>
+          <a class="project__shot" href="Media/GameImgs/MazeGameImgs/MazeGame.png" target="_blank" rel="noopener">
+            <img src="Media/web/maze-level.webp" alt="Maze level 3 with zoom and trail buttons" width="313" height="617" loading="lazy">
+          </a>
+        </article>
+
+        <!-- Project: Mixer Batch Reporting (company logo on the right side) -->
+        <article class="project project--side">
+          <p class="project__meta" data-i18n="projects.mixer.meta">Industrial software, Plus Mühendislik</p>
+          <div class="project__body">
+            <h3 class="project__title" data-i18n="projects.mixer.title">Mixer Batch Reporting System</h3>
+            <p class="project__desc" data-i18n="projects.mixer.desc">
+              Collects production data from industrial mixers, tracks each batch and generates reports,
+              so the factory can follow production without paperwork.
+            </p>
+            <ul class="project__tech">
+              <li>C#</li><li>.NET</li><li>SQL Server</li>
+            </ul>
+          </div>
+          <!-- Company logo (dark tile because the logo has a black background) -->
+          <div class="project__logo">
+            <img src="Media/web/plus-logo.png" alt="Plus Mühendislik logo" width="183" height="68" loading="lazy">
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- =================== PROJECTS — END =================== -->
+
+
+    <!-- =====================================================
+         ABOUT — START   (styles: css/home.css → ABOUT)
+         Short bio.
+         ===================================================== -->
+    <section id="about" class="section about">
+      <div class="container">
+
+        <div class="about__bio">
+          <h2 class="section__title" data-i18n="about.title">About</h2>
+          <p data-i18n="about.p1">
+            I graduated in Computer Engineering from Biruni University in 2026. I work on two sides of software:
+            games and simulations in Unity, and backend services in .NET.
+          </p>
+          <p data-i18n="about.p2">
+            Both sides need the same habits: clean architecture, careful use of memory, and code another
+            developer can pick up. I speak English at C1 level.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <!-- ==================== ABOUT — END ==================== -->
+
+
+    <!-- =====================================================
+         CONTACT — START   (styles: css/home.css → CONTACT)
+         ===================================================== -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section__title" data-i18n="contact.title">Contact</h2>
+        <p class="contact__text" data-i18n="contact.text">
+          Hiring for a game or backend role, or have a project in mind? Email or call me.
+        </p>
+        <a href="mailto:turakoglufatih@gmail.com" class="contact__email">turakoglufatih@gmail.com</a>
+        <!-- Phone: tel: link opens the dialer on phones -->
+        <a href="tel:+905356890870" class="contact__phone">+90 535 689 08 70</a>
+        <ul class="contact__links">
+          <li><a href="https://github.com/fatihturakoglu" target="_blank" rel="noopener">GitHub</a></li>
+          <!-- Replace # with your LinkedIn profile -->
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="Media/CV/Muhammed%20Fatih%20Turako%C4%9Flu.pdf" download data-i18n="contact.cv">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- =================== CONTACT — END =================== -->
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER — START   (styles: css/footer.css)
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Muhammed Fatih Turakoğlu</p>
+      <p data-i18n="footer.location">Istanbul, Türkiye</p>
+    </div>
+  </footer>
+  <!-- ==================== FOOTER — END ==================== -->
+
+  <!-- Small script: mobile menu + footer year -->
+  <script src="js/main.js"></script>
+</body>
+</html>

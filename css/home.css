@@ -1,0 +1,526 @@
+/* ==========================================================
+   HOME PAGE — the sections inside <main> in index.html.
+   Order: HERO → EXPERIENCE → SKILLS → PROJECTS → ABOUT → CONTACT
+   Backgrounds alternate: cream, white, cream, white, cream, mint.
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   HERO (#home) — big name, one-line intro, photo
+   ---------------------------------------------------------- */
+.hero {
+  padding: calc(var(--navbar-height) + 72px) 0 96px;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  align-items: end;
+  gap: 64px;
+}
+
+/* The page's one bold element: the name, set very large and tight */
+.hero__name {
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+}
+
+.hero__intro {
+  font-size: var(--text-xl);
+  line-height: 1.45;
+  color: var(--color-ink);
+  max-width: 34ch;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Photo with a mint block offset behind it */
+.hero__photo {
+  position: relative;
+  isolation: isolate; /* keeps the mint block behind the photo only */
+}
+.hero__photo::before {
+  content: "";
+  position: absolute;
+  inset: 20px -20px -20px 20px;
+  background-color: var(--color-soft);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+}
+.hero__photo img {
+  border-radius: var(--radius-lg);
+  aspect-ratio: 704 / 891;
+  object-fit: cover;
+}
+
+/* Hero on tablets and phones: photo goes above, smaller */
+@media (max-width: 860px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero__photo {
+    order: -1;
+    width: 200px;
+  }
+  .hero__photo::before {
+    inset: 12px -12px -12px 12px;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   EXPERIENCE (#experience) — timeline + certificate images
+   ---------------------------------------------------------- */
+.experience {
+  background-color: var(--color-white);
+}
+
+/* Timeline: a line across the top, one dot per job, three columns */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  border-top: 2px solid var(--color-soft);
+  margin-bottom: 72px;
+}
+.timeline__item {
+  position: relative;
+  padding-top: 28px;
+}
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+.timeline__date {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.timeline__role {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+.timeline__company {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.timeline__desc {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  max-width: 40ch;
+}
+
+.education {
+  margin-bottom: 64px;
+}
+
+.experience__subtitle {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+/* Certificates: three images in a row, title and issuer under each */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cert a {
+  display: block;
+  margin-bottom: 12px;
+}
+.cert img {
+  width: 100%;
+  aspect-ratio: 640 / 453;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--color-soft);
+  border-radius: 8px;
+  transition: opacity var(--transition);
+}
+.cert a:hover img {
+  opacity: 0.85;
+}
+.cert__title {
+  font-weight: 600;
+  line-height: 1.35;
+}
+.cert__meta {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+/* Phones: timeline turns vertical, certificates stack */
+@media (max-width: 860px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: none;
+    border-left: 2px solid var(--color-soft);
+    margin-bottom: 56px;
+  }
+  .timeline__item {
+    padding: 0 0 28px 24px;
+  }
+  .timeline__item::before {
+    top: 6px;
+    left: -7px;
+  }
+  .certs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small phones: one certificate per row */
+@media (max-width: 560px) {
+  .certs {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   SKILLS (#skills) — two main areas, then a quiet row of the rest
+   ---------------------------------------------------------- */
+.skills-band {
+  background-color: var(--color-bg);
+  padding: 96px 0;
+}
+
+.skills-band__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+/* Each area: blue top bar so the two areas read as a pair */
+.skills-band__area {
+  border-top: 4px solid var(--color-primary);
+  padding-top: 24px;
+}
+
+.skills-band__heading {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.skills-band__lead {
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+
+/* Skill names as soft mint chips */
+.skills-band__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skills-band__list li {
+  background-color: var(--color-soft);
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+}
+
+/* The rest: label + plain text, three columns */
+.skills-band__more {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-soft);
+}
+.skills-band__more dt {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.skills-band__more dd {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+@media (max-width: 860px) {
+  .skills-band {
+    padding: 72px 0;
+  }
+  .skills-band__grid,
+  .skills-band__more {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   PROJECTS (#projects) — a list of rows, not cards
+   Left column: what kind of project. Right column: details.
+   ---------------------------------------------------------- */
+.projects {
+  background-color: var(--color-white);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+  padding: 40px 0;
+  border-top: 1px solid var(--color-soft);
+}
+.project:last-child {
+  border-bottom: 1px solid var(--color-soft);
+}
+
+.project__meta {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-muted);
+  padding-top: 6px;
+}
+
+.project__title {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.project__desc {
+  color: var(--color-muted);
+  max-width: 62ch;
+  margin-bottom: 16px;
+}
+
+/* Technologies as a comma-separated inline list */
+.project__tech {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.project__tech li:not(:last-child)::after {
+  content: ",\00a0";
+}
+
+.project__link {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-underline-offset: 4px;
+}
+.project__link:hover {
+  color: var(--color-ink);
+}
+
+/* --- Project screenshots (galleries) --- */
+.project__gallery {
+  grid-column: 2;          /* sits under the text, right column */
+  margin-top: 8px;
+}
+
+.gallery a {
+  display: block;
+}
+.gallery img,
+.gallery__banner,
+.project__shot img {
+  border-radius: 10px;
+  background-color: var(--color-soft);
+}
+
+/* PC screenshots: one large image on the left, four small ones in a 2x2 grid */
+.gallery--landscape {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+}
+.gallery--landscape a:first-child {
+  grid-row: span 2;
+}
+.gallery--landscape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+/* Phone screenshots: a row of phones, every other one sits a bit lower */
+.gallery--phones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-bottom: 24px;    /* room for the lowered phones */
+}
+.gallery--phones img {
+  width: 100%;
+  aspect-ratio: 9 / 19;
+  object-fit: cover;
+  border: 4px solid var(--color-ink);
+  border-radius: 18px;
+}
+.gallery--phones a:nth-child(even) {
+  transform: translateY(24px);
+}
+
+/* Banner above the phones (Big Punch Man) */
+.gallery__banner {
+  width: 100%;
+  max-width: 560px;
+  margin-bottom: 16px;
+}
+
+/* Gentle zoom hint on screenshots you can open */
+.gallery a img,
+.project__shot img {
+  transition: opacity var(--transition);
+}
+.gallery a:hover img,
+.project__shot:hover img {
+  opacity: 0.85;
+}
+
+/* Project with one phone screenshot on the right side (Maze) */
+.project--side {
+  grid-template-columns: 240px 1fr 150px;
+  align-items: start;
+}
+.project__shot img {
+  border: 4px solid var(--color-ink);
+  border-radius: 18px;
+}
+
+/* Company logo tile (Plus Mühendislik): black like the logo's own background */
+.project__logo {
+  background-color: #000;
+  border-radius: 10px;
+  padding: 18px 14px;
+}
+.project__logo img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .project,
+  .project--side {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 32px 0;
+  }
+  .project__gallery {
+    grid-column: 1;
+    margin-top: 16px;
+  }
+  .gallery--landscape {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery--landscape a:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+  .gallery--phones {
+    gap: 10px;
+  }
+  .gallery--phones img {
+    border-width: 3px;
+    border-radius: 12px;
+  }
+  .gallery--phones a:nth-child(even) {
+    transform: translateY(14px);
+  }
+  .project__shot {
+    width: 140px;
+    margin-top: 16px;
+  }
+  .project__logo {
+    width: 160px;
+    margin-top: 16px;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   ABOUT (#about) — short bio
+   ---------------------------------------------------------- */
+.about__bio p {
+  max-width: 62ch;
+  margin-bottom: 16px;
+}
+
+
+/* ----------------------------------------------------------
+   CONTACT (#contact) — the email address is the main action
+   ---------------------------------------------------------- */
+.contact {
+  background-color: var(--color-soft);
+}
+
+.contact__text {
+  font-size: var(--text-lg);
+  max-width: 48ch;
+  margin-bottom: 20px;
+}
+
+.contact__email {
+  display: inline-block;
+  font-size: clamp(1.1rem, 5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  overflow-wrap: anywhere;
+  margin-bottom: 12px;
+}
+.contact__phone {
+  display: block;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+  margin-bottom: 32px;
+}
+.contact__phone:hover {
+  color: var(--color-primary);
+}
+.contact__email:hover {
+  color: var(--color-ink);
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+.contact__links a {
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+.contact__links a:hover {
+  color: var(--color-primary);
+}

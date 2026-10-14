@@ -1,0 +1,34 @@
+/* ==========================================================
+   VARIABLES — the site theme.
+   Change colors / font / sizes here and the whole site updates.
+   ========================================================== */
+:root {
+  /* --- Brand colors --- */
+  --color-primary:   #3368A0; /* main blue: buttons, links, the hero name */
+  --color-secondary: #66A3BF; /* light blue: hovers, small accents */
+  --color-soft:      #C8DFDB; /* mint: photo block, dividers, contact background */
+  --color-bg:        #F2EFE7; /* cream: page background */
+
+  /* --- Text colors (deep navy taken from the primary blue, not black) --- */
+  --color-ink:   #1C3550; /* main text */
+  --color-muted: #4E6075; /* secondary text */
+  --color-white: #FFFFFF;
+
+  /* --- Font --- */
+  --font-main: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* --- Type scale (ratio ~1.25) --- */
+  --text-sm:   0.875rem;
+  --text-base: 1.0625rem;  /* 17px body */
+  --text-lg:   1.25rem;
+  --text-xl:   1.5625rem;
+  --text-2xl:  2.25rem;     /* section titles */
+  --text-hero: clamp(3rem, 8.5vw, 7rem); /* the big name */
+
+  /* --- Layout --- */
+  --container-width: 1120px;
+  --navbar-height: 68px;
+  --radius-sm: 6px;   /* buttons */
+  --radius-lg: 14px;  /* photo */
+  --transition: 0.2s ease;
+}

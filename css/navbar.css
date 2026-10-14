@@ -1,0 +1,94 @@
+/* ==========================================================
+   NAVBAR — top menu only. HTML: the NAVBAR block in index.html.
+   ========================================================== */
+
+/* --- Bar: fixed at the top of the page --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-soft);
+  z-index: 100;
+}
+
+.navbar__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Name on the left --- */
+.navbar__logo {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+/* --- Menu links (desktop) --- */
+.navbar__menu {
+  display: flex;
+  gap: 36px;
+}
+
+.navbar__menu a {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-muted);
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.navbar__menu a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* --- Hamburger button (hidden on desktop) --- */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar__toggle span {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-ink);
+}
+
+/* --- Mobile (768px and below) --- */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: flex;
+  }
+
+  /* Menu becomes a dropdown under the bar; shown when js/main.js adds .is-open */
+  .navbar__menu {
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-soft);
+    display: none;
+  }
+  .navbar__menu.is-open {
+    display: flex;
+  }
+  .navbar__menu a {
+    padding: 14px 24px;
+    border-bottom: none;
+  }
+}

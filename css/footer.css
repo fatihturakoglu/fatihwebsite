@@ -1,0 +1,17 @@
+/* ==========================================================
+   FOOTER — bottom bar only. HTML: the FOOTER block in index.html.
+   ========================================================== */
+.footer {
+  background-color: var(--color-ink);
+  color: var(--color-soft);
+  padding: 28px 0;
+  font-size: var(--text-sm);
+}
+
+/* Copyright on the left, city on the right */
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}

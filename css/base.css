@@ -1,0 +1,121 @@
+/* ==========================================================
+   BASE — reset and shared helpers used by every section.
+   ========================================================== */
+
+/* --- Simple reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;                   /* smooth scroll for menu links */
+  scroll-padding-top: var(--navbar-height);  /* sections don't hide under the fixed navbar */
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--text-base);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* --- Keyboard focus: always visible --- */
+:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- Centered content wrapper --- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Generic section spacing + title --- */
+.section {
+  padding: 112px 0;
+}
+
+.section__title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin-bottom: 48px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+/* Filled button */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.btn--primary:hover {
+  background-color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+/* Outline button */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+.btn--outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --- Respect users who turn off animations --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+/* --- Smaller spacing on phones --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 0;
+  }
+  .section__title {
+    margin-bottom: 32px;
+  }
+}
